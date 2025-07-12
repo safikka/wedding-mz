@@ -1,13 +1,16 @@
 {
   "name": "wedding-mz",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node src/js/postbuild.js",
+    "format": "prettier --write .",
     "preview": "vite preview",
-    "format": "prettier --write ."
+    "clean": "rm -rf build/*"
   },
   "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
     "prettier": "^3.6.2",
     "vite": "^7.0.4",
     "vite-plugin-singlefile": "^2.3.0"
