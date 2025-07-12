@@ -1,3 +1,4 @@
+// Get query param to display guest
 const getQueryParam = (param) => {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
@@ -44,9 +45,9 @@ window.addEventListener('DOMContentLoaded', () => {
             section2.style.position = 'relative';
             section2.style.transform = 'none';
             document.body.style.overflow = 'auto';
-          }
+          },
         });
-      }
+      },
     });
   });
 });
