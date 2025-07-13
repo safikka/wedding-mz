@@ -27,15 +27,15 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap.to(letters, {
       opacity: 0,
       y: -20,
-      duration: 0.4,
+      duration: 0.2,
       stagger: 0.05,
-      ease: 'power2.out',
+      ease: 'power2.inOut',
       onComplete: () => {
         // Animate section2 up
         gsap.to(section2, {
           y: '0%',
-          duration: 1.2,
-          ease: 'power3.inOut',
+          duration: 1.8,
+          ease: 'back.inOut',
           onStart: () => {
             section2.style.zIndex = 3;
           },
