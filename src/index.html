@@ -5,22 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wedding Mahdy & Zahro</title>
     <link rel="stylesheet" href="css/main.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js" defer></script>
     <script type="module" src="js/main.js" defer></script>
   </head>
-  <body>
-    <!-- Landing Section -->
-    <section id="section1">
-      <div class="name" id="nameContainer">Welcome</div>
-      <button id="enterBtn">Enter</button>
-    </section>
+  <body class="noscroll">
+    <div class="root-lenis">
+      <section class="hero" id="hero">
+        <div class="hero-overlay">
+          <img class="logo" src="css/download.svg" alt="Mahdy & Zahro" />
+          <div class="invitation">
+            <div class="guest-wrapper">
+              <h1 class="guest-wrapper-to">Kepada Yth,</h1>
+              <h1 id="guest-name"></h1>
+            </div>
+            <button id="enter-button">Open Invitation</button>
+          </div>
+        </div>
+      </section>
 
-    <!-- Section 2 (will animate up) -->
-    <section id="section2">Section 2</section>
-
-    <!-- Other Scrollable Sections -->
-    <section class="scroll-section" id="section3">Section 3</section>
-    <section class="scroll-section" id="section4">Section 4</section>
-    <section class="scroll-section" id="section5">Section 5</section>
+      <div class="main-content" id="main-content">
+        <section class="section content-1">Section 2</section>
+        <section class="section content-2">Section 3</section>
+        <section class="section content-3">Section 4</section>
+        <section class="section footer">Section 5</section>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,53 +1,45 @@
-// Get query param to display guest
 const getQueryParam = (param) => {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-  const nameParam = getQueryParam('name') || 'Welcome';
-  const nameContainer = document.getElementById('nameContainer');
+const guestName = getQueryParam('to');
+const nameEl = document.getElementById('guest-name');
+if (guestName) {
+  nameEl.textContent = `${guestName}`;
+}
 
-  // Setup name text with span per char
-  nameContainer.innerHTML = '';
-  for (let char of nameParam) {
-    const span = document.createElement('span');
-    span.textContent = char;
-    nameContainer.appendChild(span);
-  }
+const heroSection = document.getElementById('hero');
+const enterBtn = document.getElementById('enter-button');
+const mainContent = document.getElementById('main-content');
 
-  const enterBtn = document.getElementById('enterBtn');
-  const section1 = document.getElementById('section1');
-  const section2 = document.getElementById('section2');
+document.body.classList.add('noscroll');
 
-  enterBtn.addEventListener('click', () => {
-    const letters = nameContainer.querySelectorAll('span');
+enterBtn.addEventListener('click', () => {
+  gsap.to(mainContent, {
+    y: 0,
+    duration: 1.2,
+    ease: 'power4.inOut',
+    onComplete: () => {
+      // setelah animasi selesai, remove hero
+      heroSection.remove();
+      document.body.classList.remove('noscroll');
 
-    // Fade out letters
-    gsap.to(letters, {
-      opacity: 0,
-      y: -20,
-      duration: 0.4,
-      stagger: 0.05,
-      ease: 'power2.out',
-      onComplete: () => {
-        // Animate section2 up
-        gsap.to(section2, {
-          y: '0%',
-          duration: 1.2,
-          ease: 'power3.inOut',
-          onStart: () => {
-            section2.style.zIndex = 3;
-          },
-          onComplete: () => {
-            // Hide section1 and unlock scroll
-            section1.style.display = 'none';
-            section2.style.position = 'relative';
-            section2.style.transform = 'none';
-            document.body.style.overflow = 'auto';
-          },
-        });
-      },
-    });
+      // Inisialisasi Lenis setelah scroll diaktifkan
+      const lenis = new Lenis({
+        duration: 1.2,
+        direction: 'vertical',
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+        smoothTouch: true,
+        syncTouch: true,
+        autoRaf: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    },
   });
 });
