@@ -1,272 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-
-/* Root CSS */
+/* Start - Global setup */
 * {
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
-}
-
-body,
-html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-body.noscroll {
-  overflow: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-.root-lenis {
-  overflow: visible;
-  height: auto;
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #eeee;
 }
 
-/* Start - Hero Section */
-.hero {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: url('https://i.pinimg.com/736x/16/0f/74/160f748103c0ef05a2dd07293c9ff3c8.jpg');
-  /* background-image: url('https://i.pinimg.com/1200x/3e/92/62/3e92624cad133f362e29adf94b45fd2c.jpg'); */
+p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+/* End - Global setup */
+
+.Landing {
+  background-image: url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg');
+  background-position: center;
   background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-
-.hero-overlay {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 40px;
-  text-align: center;
-  color: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  position: relative;
 
-  .logo {
-    width: 100%;
-  }
+  .wrapper-tamu {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
-  .invitation {
-    margin-bottom: 1rem;
-  }
-
-  .guest-wrapper {
-    h1 {
-      margin: 10px;
-      font-weight: 300;
-      font-size: 2rem;
-      line-height: 1.4;
-      font-family: 'Merriweather', serif;
+    p {
+      font-weight: 100;
     }
+  }
 
-    .guest-wrapper-to {
-      font-size: 1.2rem;
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: 0.5px;
-      font-family: 'Merriweather', serif;
+  .open-invit {
+    margin-top: 1rem;
+    a {
+      color: #fff;
     }
-
-    padding-bottom: 2rem;
-  }
-
-  #guest-name {
-    font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: 0.3px;
-    font-family: 'Merriweather', serif;
-  }
-
-  #enter-button {
-    padding: 1em 2em;
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    background-color: #ffffff;
-    color: #000;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  #enter-button:hover {
-    background-color: #eee;
   }
 
   @media (max-width: 768px) {
-    .hero {
-      align-items: normal;
-
-      .logo {
-        margin-top: 5rem;
-      }
-
-      .guest-wrapper {
-        h1 {
-          margin: 10px;
-          font-size: 1.4rem;
-          line-height: 1.3;
-        }
-
-        .guest-wrapper-to {
-          font-size: 1rem;
-        }
-
-        padding-bottom: 2rem;
-      }
-
-      #guest-name {
-        font-size: 1.2rem;
-      }
-
-      #enter-button {
-        font-size: 0.9rem;
-      }
-    }
+    justify-content: space-around;
   }
 }
-/* End - Hero Section */
 
-/* Start - CSS Global */
-.main-content {
-  transform: translateY(100vh);
-  position: relative;
-  z-index: 11;
-
-  .section {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-  }
+.Landing::before {
+  position: absolute;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
-/* End - CSS Global */
 
-/* Start - Content 1 */
-.content-1 {
-  background-color: #fce4ec;
-  display: flex;
-  flex-direction: column;
+/* BACK TO TOP */
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  min-height: 100vh;
-  box-sizing: border-box;
-
-  .header-section-1 {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-
-  .promises p {
-    font-family: 'Merriweather', serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    max-width: 900px;
-    line-height: 1.7;
-  }
-
-  .lakon-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-
-    .card-lakon {
-      background-color: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    .foto-lakon {
-      width: 100%;
-      border-radius: 0.75rem;
-      object-fit: cover;
-      margin-bottom: 1rem;
-    }
-
-    .nama-lengkap {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .nama-panggilan {
-      font-size: 1rem;
-      font-style: italic;
-      margin-bottom: 0.25rem;
-    }
-
-    .nama-orang-tua {
-      font-size: 0.9rem;
-      color: #555;
-    }
-  }
-
-  @media (max-width: 600px) {
-    min-height: 150vh;
-    padding: 1.5rem;
-
-    .header-section-1 {
-      font-size: 1.2rem;
-    }
-
-    .promises p {
-      font-size: 0.75rem;
-      max-width: 100%;
-    }
-
-    .lakon-cards {
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .card-lakon {
-      max-width: 100%;
-      padding: 1.25rem;
-    }
-
-    .nama-lengkap {
-      font-size: 1rem;
-    }
-
-    .nama-panggilan {
-      font-size: 0.95rem;
-    }
-
-    .nama-orang-tua {
-      font-size: 0.85rem;
-    }
-  }
+  background-color: #dc143c;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: 0.2s ease-out;
 }
-/* End - Content 1 */
 
-.content-2 {
-  background-color: #f3e5f5;
+.back-to-top span {
+  color: #fff;
+  font-size: 3rem;
+  transition: 0.2s ease-out;
 }
-.content-3 {
-  background-color: #e8eaf6;
+
+.back-to-top:hover {
+  background-color: #be1a3b;
 }
-.footer {
-  background-color: #d7ccc8;
+.back-to-top:hover span {
+  transform: translateY(-4px);
 }

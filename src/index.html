@@ -3,70 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wedding Mahdy & Zahro</title>
+    <title>Wedding of Zahro & Mahdy</title>
     <link rel="stylesheet" href="css/main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script type="module" src="js/main.js" defer></script>
   </head>
-  <body class="noscroll">
-    <div class="root-lenis">
-      <section class="hero" id="hero">
-        <div class="hero-overlay">
-          <img class="logo" src="css/download.svg" alt="Mahdy & Zahro" />
-          <div class="invitation">
-            <div class="guest-wrapper">
-              <h1 class="guest-wrapper-to">Kepada Yth,</h1>
-              <h1 id="guest-name"></h1>
-            </div>
-            <button id="enter-button">Open Invitation</button>
-          </div>
+  <body>
+    <section class="Landing">
+      <img src="css/download.svg" alt="Zahro & Mahdy" />
+      <div class="wrapper-tamu">
+        <p>Kepada Yth.</p>
+        <h2 id="guest-name"></h2>
+        <div class="open-invit">
+          <a href="#mempelai" id="open-invit">
+            <span class="material-icons">keyboard_double_arrow_down</span>
+          </a>
         </div>
-      </section>
-
-      <div class="main-content" id="main-content">
-        <section class="section content-1">
-          <div class="header-section-1">
-            <p>The Promises</p>
-          </div>
-
-          <div class="promises">
-            <p>
-              “Dan diantara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri
-              dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan
-              dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu
-              benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
-            </p>
-            <p>-</p>
-            <p><strong>(Q.S. Ar-Rum : 21)</strong></p>
-          </div>
-
-          <div class="lakon-cards">
-            <div class="card-lakon">
-              <img
-                src="https://i.pinimg.com/736x/44/52/2e/44522ed66af9240516c8a808d4ff6166.jpg"
-                alt="Foto Mempelai Pria"
-                class="foto-lakon"
-              />
-              <h2 class="nama-lengkap">Mahdy Syafiqa Jannata</h2>
-              <p class="nama-orang-tua">Putra dari Bapak X & Ibu Y</p>
-            </div>
-
-            <div class="card-lakon">
-              <img
-                src="https://i.pinimg.com/736x/44/52/2e/44522ed66af9240516c8a808d4ff6166.jpg"
-                alt="Foto Mempelai Wanita"
-                class="foto-lakon"
-              />
-              <h2 class="nama-lengkap">Laelatuz Zahro</h2>
-              <p class="nama-orang-tua">Putri dari Bapak A & Ibu B</p>
-            </div>
-          </div>
-        </section>
-        <section class="section content-2">Section 3</section>
-        <section class="section content-3">Section 4</section>
-        <section class="section footer">Section 5</section>
       </div>
-    </div>
+    </section>
+    <section id="mempelai">
+      <h2>Section 2</h2>
+      <img src="https://picsum.photos/1920/1024" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illo esse ullam assumenda
+        incidunt veritatis dignissimos earum eveniet recusandae dolores.
+      </p>
+    </section>
+
+    <section id="bottom">
+      <h2>Section 3</h2>
+      <img src="https://picsum.photos/1920/1030" alt="" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illo esse ullam assumenda
+        incidunt veritatis dignissimos earum eveniet recusandae dolores.
+      </p>
+    </section>
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#mempelai" class="back-to-top">
+      <span class="material-icons">arrow_upward</span>
+    </a>
+    <section>Pengenalan</section>
+    <section>Info Alamat & Tanggal Acara</section>
+    <section>Galery</section>
+    <section>Pesan</section>
   </body>
 </html>
