@@ -1,75 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+/* Root CSS */
 * {
-  margin: 0;
-  padding: 0;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 
-html, body {
+body,
+html {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  overflow: hidden;
-  font-family: sans-serif;
 }
 
-#section1, #section2 {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
+body.noscroll {
+  overflow: hidden;
+}
+
+.root-lenis {
+  overflow: visible;
+  height: auto;
+}
+
+/* Start - Hero Section */
+.hero {
+  position: fixed;
   top: 0;
   left: 0;
-}
-
-#section1 {
-  background: #111;
-  color: white;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-#section2 {
-  background: #f0f0f0;
-  color: #111;
-  z-index: 1;
-  transform: translateY(100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-}
-
-.name {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.name span {
-  display: inline-block;
-  opacity: 1;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ddd;
-}
-
-.scroll-section {
+  width: 100%;
   height: 100vh;
+  background-image: url('https://i.pinimg.com/736x/16/0f/74/160f748103c0ef05a2dd07293c9ff3c8.jpg');
+  /* background-image: url('https://i.pinimg.com/1200x/3e/92/62/3e92624cad133f362e29adf94b45fd2c.jpg'); */
+  background-size: cover;
+  background-position: bottom;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  z-index: 10;
 }
 
-#section3 { background: #d9e3f0; }
-#section4 { background: #ffe0b2; }
-#section5 { background: #c8e6c9; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  text-align: center;
+  color: white;
+
+  .logo {
+    width: 100%;
+  }
+
+  .invitation {
+    margin-bottom: 1rem;
+  }
+
+  .guest-wrapper {
+    h1 {
+      margin: 10px;
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 1.4;
+      font-family: 'Merriweather', serif;
+    }
+
+    .guest-wrapper-to {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      font-family: 'Merriweather', serif;
+    }
+
+    padding-bottom: 2rem;
+  }
+
+  #guest-name {
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.3px;
+    font-family: 'Merriweather', serif;
+  }
+
+  #enter-button {
+    padding: 1em 2em;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  #enter-button:hover {
+    background-color: #eee;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      align-items: normal;
+
+      .logo {
+        margin-top: 5rem;
+      }
+
+      .guest-wrapper {
+        h1 {
+          margin: 10px;
+          font-size: 1.4rem;
+          line-height: 1.3;
+        }
+
+        .guest-wrapper-to {
+          font-size: 1rem;
+        }
+
+        padding-bottom: 2rem;
+      }
+
+      #guest-name {
+        font-size: 1.2rem;
+      }
+
+      #enter-button {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+/* End - Hero Section */
+
+/* Start - CSS Global */
+.main-content {
+  transform: translateY(100vh);
+  position: relative;
+  z-index: 11;
+
+  .section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+/* End - CSS Global */
+
+/* Start - Content 1 */
+.content-1 {
+  background-color: #fce4ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  .header-section-1 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .promises p {
+    font-family: 'Merriweather', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    max-width: 900px;
+    line-height: 1.7;
+  }
+
+  .lakon-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .card-lakon {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .foto-lakon {
+      width: 100%;
+      border-radius: 0.75rem;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .nama-lengkap {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .nama-panggilan {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    .nama-orang-tua {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+
+  @media (max-width: 600px) {
+    min-height: 150vh;
+    padding: 1.5rem;
+
+    .header-section-1 {
+      font-size: 1.2rem;
+    }
+
+    .promises p {
+      font-size: 0.75rem;
+      max-width: 100%;
+    }
+
+    .lakon-cards {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card-lakon {
+      max-width: 100%;
+      padding: 1.25rem;
+    }
+
+    .nama-lengkap {
+      font-size: 1rem;
+    }
+
+    .nama-panggilan {
+      font-size: 0.95rem;
+    }
+
+    .nama-orang-tua {
+      font-size: 0.85rem;
+    }
+  }
+}
+/* End - Content 1 */
+
+.content-2 {
+  background-color: #f3e5f5;
+}
+.content-3 {
+  background-color: #e8eaf6;
+}
+.footer {
+  background-color: #d7ccc8;
+}
