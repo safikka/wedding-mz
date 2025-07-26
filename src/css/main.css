@@ -49,6 +49,8 @@ img {
 /* End - Global setup */
 
 .Landing {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   background-image: url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg');
   background-position: center;
   background-size: cover;
