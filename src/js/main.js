@@ -31,49 +31,63 @@ document.getElementById('open-invit').addEventListener('click', function (e) {
 });
 
 const scriptURL =
-  'https://script.google.com/macros/s/AKfycbz4k8ycYWA486Dy2inaYxHF0Gw16h9Ge4jeBAwHndGed8AtGLxd6i8Xa8yU_6dXMNnqEw/exec'; // Ganti dengan URL Web App kamu
+  'https://script.google.com/macros/s/AKfycby0N3yEC6vLQJRPRTkAjJQuWTcdJHR-8T1rzGE2grZ7AjXaV3shb5cujO8ETP_aRic/exec';
 
 async function fetchUcapan() {
+  const listContainer = document.getElementById('ucapan-list');
+  const loadingText = document.getElementById('loading');
+
   try {
-    const res = await fetch(scriptURL);
-    const data = await res.json();
+    const response = await fetch(scriptURL);
+    const data = await response.json();
 
-    const listDiv = document.getElementById('listUcapan');
-    listDiv.innerHTML = '';
+    // 👉 Debug hasil GET dari Google Apps Script
+    loadingText.remove();
 
-    data.reverse().forEach((row) => {
-      const el = document.createElement('div');
-      el.innerHTML = `<strong>${row.nama}</strong> (${row.kehadiran}):<br>${row.ucapan}`;
-      el.style.marginBottom = '1rem';
-      listDiv.appendChild(el);
+    if (data.length === 0) {
+      listContainer.innerHTML = `<p class="text-center text-gray-500">Belum ada ucapan.</p>`;
+      return;
+    }
+
+    data.forEach((item) => {
+      const div = document.createElement('div');
+      div.className = 'testing';
+      div.innerHTML = `
+          <p class="text-gray-700 italic">"${item.ucapan}"</p>
+          <p class="text-right mt-2 text-sm text-gray-600 font-medium">- ${item.nama}</p>
+        `;
+      listContainer.appendChild(div);
     });
-  } catch (err) {
-    console.error('Gagal fetch:', err);
+  } catch (error) {
+    console.error('Gagal fetch:', error);
   }
 }
 
-document.getElementById('ucapanForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
+// document.getElementById('ucapanForm').addEventListener('submit', async (e) => {
+//   e.preventDefault();
 
-  const form = e.target;
-  const data = {
-    nama: form.nama.value,
-    kehadiran: form.kehadiran.value,
-    ucapan: form.ucapan.value,
-  };
+//   const form = e.target;
+//   const data = {
+//     nama: form.nama.value,
+//     kehadiran: form.kehadiran.value,
+//     ucapan: form.ucapan.value,
+//   };
 
-  try {
-    const res = await fetch(scriptURL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
-    });
+//   try {
+//     const response = await fetch(scriptURL, {
+//       redirect: 'follow',
+//       method: 'POST',
+//       body: JSON.stringify(data),
+//       headers: {
+//         'Content-Type': 'text/plain;charset=utf-8',
+//       },
+//     });
 
-    form.reset();
-    await fetchUcapan();
-  } catch (err) {
-    console.error('Gagal kirim:', err);
-  }
-});
+//     form.reset();
+//     // await fetchUcapan();
+//   } catch (e) {
+//     console.log(`Error: ${e}`);
+//   }
+// });
 
-fetchUcapan(); // load awal
+fetchUcapan();

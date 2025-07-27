@@ -1,6 +1,7 @@
 // vite.config.mjs
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   root: 'src',
@@ -9,5 +10,5 @@ export default defineConfig({
     emptyOutDir: true,
     assetsInlineLimit: Infinity,
   },
-  plugins: [viteSingleFile()],
+  plugins: [tailwindcss(), viteSingleFile()],
 });

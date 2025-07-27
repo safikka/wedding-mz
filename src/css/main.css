@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 /* Start - Global setup */
 * {
   margin: 0;
@@ -358,3 +360,10 @@ body.scroll-lock {
   z-index: -1;
 }
 /* End - Pesan */
+
+.testing {
+  margin: 1rem;
+  p {
+    color: black;
+  }
+}

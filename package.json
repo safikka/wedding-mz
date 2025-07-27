@@ -14,5 +14,9 @@
     "prettier": "^3.6.2",
     "vite": "^7.0.4",
     "vite-plugin-singlefile": "^2.3.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11"
   }
 }
