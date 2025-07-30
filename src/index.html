@@ -5,79 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="rgba(0,0,0,0)" />
     <title>Wedding of Zahro & Mahdy</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link rel="stylesheet" href="css/tailwind.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script type="module" src="js/main.js" defer></script>
   </head>
-  <body class="scroll-lock">
-    <section class="Landing">
-      <div class="wrapper-logo">
-        <p>The Wedding Of</p>
-        <img src="css/download.svg" alt="Zahro & Mahdy" />
-      </div>
-      <div class="wrapper-tamu">
-        <p>___</p>
-        <p>Kepada Yth.<br />Bpk/Ibu/Saudara/i</p>
-        <h2 id="guest-name"></h2>
-        <div class="open-invit">
-          <a href="#mempelai" id="open-invit">
-            <span class="material-icons">keyboard_double_arrow_down</span>
-            <span>Buka Undangan</span>
-          </a>
+  <body class="overflow-hidden">
+    <section
+      id="Landing"
+      class="relative flex flex-col justify-center items-center min-h-screen bg-cover bg-center text-white px-4 py-8"
+      style="
+        background-image: url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg');
+      "
+    >
+      <!-- Overlay gelap bawah terang atas -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent z-0"
+      ></div>
+
+      <!-- Konten utama -->
+      <div class="relative z-10 text-center flex flex-col items-center gap-6">
+        <!-- Teks pembuka -->
+        <p class="text-lg sm:text-xl font-light">The Wedding Of</p>
+
+        <!-- Logo gambar nama -->
+        <img
+          src="css/download.svg"
+          alt="Zahro & Mahdy"
+          class="w-[250px] sm:w-[500px] max-w-full object-contain"
+        />
+
+        <!-- Undangan untuk tamu -->
+        <div class="mt-6 flex flex-col items-center gap-1">
+          <p class="text-white text-lg sm:text-xl leading-snug">
+            Kepada Yth.<br />Bpk/Ibu/Saudara/i
+          </p>
+          <h2 id="guest-name" class="text-3xl sm:text-4xl font-semibold mt-4">Tamu Undangan</h2>
         </div>
+
+        <!-- Tombol buka -->
+        <a
+          href="#mempelai"
+          id="open-invit"
+          class="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-white text-white rounded-full text-lg transition hover:bg-white hover:text-black"
+        >
+          <span class="material-icons text-2xl">keyboard_double_arrow_down</span>
+          <span>Buka Undangan</span>
+        </a>
       </div>
     </section>
-    <section class="Mempelai" id="mempelai">
-      <div class="wrapper-promises">
-        <p>---</p>
-        <p>
+
+    <section
+      id="mempelai"
+      class="min-h-screen bg-black flex flex-col justify-around py-6 px-4 text-white"
+    >
+      <!-- Ayat & Kutipan -->
+      <div
+        class="flex flex-col items-center justify-center text-center space-y-4 max-w-5xl mx-auto"
+      >
+        <p class="italic font-light text-base sm:text-lg">---</p>
+        <p class="italic font-light text-base sm:text-lg px-4">
           “Dan diantara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari
           jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
           diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
           tanda-tanda bagi kaum yang berpikir.”
         </p>
-        <p><strong>(Q.S. Ar-Rum : 21)</strong></p>
+        <p class="font-semibold">(Q.S. Ar-Rum : 21)</p>
       </div>
 
-      <div class="wrapper-mempelai">
-        <div class="wedok"></div>
-
-        <div class="lanang"></div>
+      <!-- Box Mempelai -->
+      <div class="flex flex-col md:flex-row justify-around items-center gap-6 mt-8 px-4">
+        <div class="bg-red-500 rounded-xl p-20 text-white text-center">Image Mempelai Wanita</div>
+        <div class="bg-blue-500 rounded-xl p-20 text-white text-center">Image Mempelai Pria</div>
       </div>
     </section>
-    <section class="Info-Acara">
-      <div class="wrapper-info">
-        <div class="info-header">
-          <p>Akad dan Resepsi</p>
+
+    <section
+      id="info-acara"
+      class="relative bg-cover bg-center text-black min-h-screen flex items-center justify-center px-4 py-16 sm:py-24"
+      style="
+        background-image: url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg');
+      "
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-black/70 z-0"></div>
+
+      <!-- Box Konten -->
+      <div
+        class="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 sm:p-10 space-y-6"
+      >
+        <!-- Judul -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800">Akad & Resepsi</h2>
         </div>
 
-        <div class="info-waktu">
-          <p>Sabtu, 30 Agustus 2025</p>
-          <p>09.00 - 12.00</p>
+        <!-- Garis Pemisah -->
+        <div class="border-t border-gray-300"></div>
+
+        <!-- Waktu & Tanggal -->
+        <div class="text-center space-y-1">
+          <p class="text-base sm:text-lg font-medium">Sabtu, 30 Agustus 2025</p>
+          <p class="text-base sm:text-lg">Pukul 09.00 – 12.00 WIB</p>
         </div>
 
-        <div class="info-alamat">
-          <p>RM. Ibu Djoe dan Tante Hoa</p>
+        <!-- Lokasi -->
+        <div class="text-center">
+          <p class="text-base sm:text-lg font-semibold">RM. Ibu Djoe dan Tante Hoa</p>
         </div>
 
-        <div class="info-maps">
-          <div class="embed-map-responsive">
-            <div class="embed-map-container">
-              <iframe
-                class="embed-map-frame"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ibu%20djoe%20&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-              ></iframe>
+        <!-- Map Embed -->
+        <div class="relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-md">
+          <iframe
+            class="absolute top-0 left-0 w-full h-full rounded-xl"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            src="https://maps.google.com/maps?width=600&height=400&hl=en&q=ibu%20djoe%20&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="ucapan"
+      class="relative bg-[url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg')] bg-cover bg-center py-16 px-4 min-h-screen"
+    >
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-white/80 backdrop-blur-sm z-0"></div>
+
+      <!-- Content Wrapper -->
+      <div class="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-center">
+        <!-- Heading Section -->
+        <div class="mb-12 text-center">
+          <h2 class="text-3xl font-bold text-gray-800">Ucapan & Konfirmasi Kehadiran</h2>
+          <p class="text-gray-600 mt-2 max-w-md mx-auto">
+            Silakan tinggalkan ucapan dan konfirmasi kehadiran untuk kedua mempelai.
+          </p>
+        </div>
+
+        <!-- Form + List -->
+        <div class="w-full flex flex-col md:flex-row gap-8">
+          <!-- Form -->
+          <div class="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4">
+            <h3 class="text-xl font-bold text-center text-gray-800">Ucapan & RSVP</h3>
+            <p class="text-center text-sm text-gray-600">
+              Berikan ucapan terbaik & konfirmasi kehadiran
+            </p>
+
+            <form id="formUcapan" class="space-y-3">
+              <input
+                type="text"
+                name="nama"
+                placeholder="Nama"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-blue-200"
+              />
+
+              <textarea
+                name="ucapan"
+                rows="4"
+                placeholder="Berikan Ucapan & Doa"
+                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-blue-200 resize-none"
+              ></textarea>
+
+              <div class="flex items-center justify-between">
+                <label class="font-medium">Konfirmasi Kehadiran:</label>
+                <div class="flex gap-2">
+                  <button
+                    type="button"
+                    class="rsvp-btn px-3 py-1 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm"
+                    data-value="Hadir"
+                  >
+                    ✅ Hadir
+                  </button>
+                  <button
+                    type="button"
+                    class="rsvp-btn px-3 py-1 rounded-full border border-red-500 text-red-500 hover:bg-red-500 hover:text-white text-sm"
+                    data-value="Tidak Hadir"
+                  >
+                    ❌ Tidak Hadir
+                  </button>
+                </div>
+              </div>
+
+              <input type="hidden" name="konfirmasi" id="konfirmasiInput" />
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white rounded-md py-2 hover:bg-blue-700 transition"
+              >
+                Kirim
+              </button>
+            </form>
+          </div>
+
+          <!-- List Ucapan -->
+          <div
+            class="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4 max-h-[600px] overflow-y-auto"
+          >
+            <h3 class="text-xl font-bold text-center text-gray-800">Ucapan Tamu</h3>
+            <div class="border-t pt-4 space-y-4" id="ucapanList">
+              <!-- Contoh Item -->
+              <div class="bg-gray-50 p-4 rounded-md shadow-sm">
+                <div class="flex items-center justify-between">
+                  <div class="font-semibold text-blue-600">Pak Lutvi</div>
+                  <div class="text-sm text-gray-500">20-06-2025 19:00</div>
+                </div>
+                <p class="mt-2 text-sm text-gray-700">
+                  semoga menjadi keluarga yang sakinah, mawaddah, warohmah.. segera dibeikan
+                  momongan. amiin
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section>Galery</section>
     <section class="Pesan">
       <div class="wrapper-pesan">
