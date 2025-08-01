@@ -139,7 +139,6 @@ async function fetchUcapan() {
       const div = document.createElement('div');
       div.className = 'bg-gray-50 p-4 rounded-md shadow-sm';
 
-      console.log(`Isi item: ${JSON.stringify(item.konfirmasi)}`);
       // Status hadir/tidak hadir
       const status =
         item.konfirmasi?.toLowerCase() === 'hadir'
@@ -162,7 +161,8 @@ async function fetchUcapan() {
 }
 
 // Submit form ke Google Apps Script
-form.addEventListener('submit', async (e) => {
+// form.addEventListener('submit', async (e) => {
+document.getElementById('formUcapan').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   // Validasi RSVP
@@ -171,12 +171,27 @@ form.addEventListener('submit', async (e) => {
     return;
   }
 
+  console.log(konfirmasiInput.value.toLowerCase());
+  const data = {
+    nama: form.nama.value,
+    kehadiran: konfirmasiInput.value.toLowerCase(),
+    ucapan: form.ucapan.value,
+  };
+
   const formData = new FormData(form);
 
   try {
+    // await fetch(scriptURL, {
+    //   method: 'POST',
+    //   body: formData,
+    // });
     await fetch(scriptURL, {
+      redirect: 'follow',
       method: 'POST',
-      body: formData,
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
     });
 
     // Reset form & RSVP button
