@@ -11,10 +11,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script type="module" src="js/main.js" defer></script>
   </head>
-  <body class="overflow-hidden bg-black">
+  <body class="font-noto overflow-hidden bg-black">
+    <!-- Landing -->
     <section
       id="Landing"
-      class="relative flex flex-col justify-center items-center min-h-screen min-h-[100svh] bg-cover bg-center text-white px-4 py-8"
+      class="relative flex flex-col justify-center items-center min-h-[100svh] bg-cover bg-center text-white px-4 py-8"
       style="
         background-image: url('css/landing-page.jpg');
         background-size: cover;
@@ -22,10 +23,10 @@
       "
     >
       <div
-        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-0"
+        class="absolute inset-0 bg-gradient-to-t from-black/100 via-black/50 to-transparent z-0"
       ></div>
 
-      <div class="relative z-10 text-center flex flex-col items-center gap-6">
+      <div class="relative z-10 text-center flex flex-col items-center pb-20 gap-6">
         <p class="text-sm sm:text-xl font-light">The Wedding Of</p>
         <div class="w-[250px] h-[200px] sm:w-[500px] sm:h-[500px] overflow-hidden rounded-xl">
           <img
@@ -44,7 +45,7 @@
         <a
           href="#mempelai"
           id="open-invit"
-          class="mt-2 mb-6 inline-flex items-center gap-2 px-4 py-2 border border-white text-white rounded-full text-sm transition hover:bg-white hover:text-black"
+          class="mt-2 inline-flex items-center gap-2 px-4 py-2 border border-white text-white rounded-full text-sm transition hover:bg-white hover:text-black active:bg-white active:text-black"
         >
           <span class="material-icons text-sm">keyboard_double_arrow_down</span>
           <span>Buka Undangan</span>
@@ -52,84 +53,96 @@
       </div>
     </section>
 
+    <!-- Mempelai -->
     <section
       id="mempelai"
-      class="min-h-screen min-h-[100svh] bg-black flex flex-col justify-around py-6 px-4 text-white"
+      class="min-h-screen bg-black flex flex-col justify-around py-6 px-4 text-white"
     >
       <div
         class="flex flex-col items-center justify-center text-center space-y-4 max-w-5xl mx-auto"
       >
-        <p class="italic font-light text-base sm:text-lg">---</p>
-        <p class="italic font-light text-base sm:text-lg px-4">
-          “Dan diantara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari
-          jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
-          diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat
-          tanda-tanda bagi kaum yang berpikir.”
+        <p class="italic font-light text-sm sm:text-xl">---</p>
+        <p class="italic font-light text-sm sm:text-xl px-4 text-justify">
+          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu
+          dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
+          menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
+          terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir”
         </p>
-        <p class="font-semibold">(Q.S. Ar-Rum : 21)</p>
+        <p class="font-semibold text-sm sm:text-2xl">(Q.S. Ar-Rum : 21)</p>
       </div>
 
-      <div class="flex flex-col md:flex-row justify-around items-center gap-6 mt-8 px-4">
+      <p class="font-bold text-center text-2xl mt-20 sm:text-2xl mb-5">Mempelai</p>
+
+      <div class="flex flex-col md:flex-row justify-around items-center gap-6 mt-8 px-4 mb-20">
         <div class="wrapper-wedok">
-          <div class="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] overflow-hidden rounded-xl">
+          <div class="w-[250px] h-[300px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-xl">
             <img
-              src="css/lanang.jpg"
-              alt="Zahro & Mahdy"
-              class="w-full h-full object-cover"
+              src="css/wedok.jpg"
+              alt="Zahro"
+              class="w-full h-full object-cover scale-110"
               style="object-position: center 80%"
             />
           </div>
           <div class="items-center">
-            <h1>Laelatuz Zahro</h1>
-            <p>Putri dari Bapak Abdul Jamil (Alm.)<br />& Ibu Sugiharti</p>
+            <p class="font-bold text-center text-lg sm:text-xl pt-4 pb-2">Laelatuz Zahro</p>
+            <p class="font-light text-center text-sm sm:text-lg">
+              Putri dari Bapak Abdul Jamil (Alm.)<br />& Ibu Sugiharti
+            </p>
           </div>
         </div>
 
         <div class="wrapper-lanang">
-          <div class="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] overflow-hidden rounded-xl">
+          <div class="w-[250px] h-[300px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-xl">
             <img
               src="css/lanang.jpg"
-              alt="Zahro & Mahdy"
-              class="w-full h-full object-cover"
+              alt="Mahdy"
+              class="w-full h-full object-cover scale-110"
               style="object-position: center 80%"
             />
           </div>
           <div class="items-center">
-            <h1>Laelatuz Zahro</h1>
-            <p>Putri dari Bapak Abdul Jamil (Alm.)<br />& Ibu Sugiharti</p>
+            <p class="font-bold text-center text-lg sm:text-xl pt-4 pb-2">Mahdy Syafiqa Jannata</p>
+            <p class="font-light text-center text-sm sm:text-lg">
+              Putra dari Bapak Jannata Shiratama<br />& Ibu Mislah Ikhwati
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Info Acara -->
     <section
       id="info-acara"
-      class="relative bg-cover bg-center text-black min-h-screen min-h-[100svh] flex items-center justify-center px-4 py-16 sm:py-24"
-      style="
-        background-image: url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg');
-      "
+      class="relative bg-cover bg-center text-black min-h-screen flex flex-col justify-center px-6 py-5 sm:py-5"
+      style="background-image: url('css/landing-page.jpg')"
     >
       <div class="absolute inset-0 bg-black/70 z-0"></div>
 
+      <h1 class="relative text-left text-5xl sm:text-4xl font-bold text-white mt-10 mb-8">
+        Akad &<br />Resepsi
+      </h1>
+
       <div
-        class="relative z-10 w-full max-w-3xl bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-6 sm:p-10 space-y-6"
+        class="relative z-10 w-full max-w-2xl border-1 border-white backdrop-blur-md rounded-2xl shadow-2xl p-6 pb-10 sm:p-10 space-y-6 mb-10"
       >
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800">Akad & Resepsi</h2>
+          <p class="font-bold text-white text-lg">Tanggal:</p>
+          <p class="font-light text-lg text-white">Sabtu, 30 Agustus 2025</p>
         </div>
 
-        <div class="border-t border-gray-300"></div>
-
-        <div class="text-center space-y-1">
-          <p class="text-base sm:text-lg font-medium">Sabtu, 30 Agustus 2025</p>
-          <p class="text-base sm:text-lg">Pukul 09.00 – 12.00 WIB</p>
+        <div>
+          <p class="font-bold text-white text-lg">Waktu:</p>
+          <p class="font-light text-lg text-white">Pukul 09.00 – 12.00 WIB</p>
         </div>
 
-        <div class="text-center">
-          <p class="text-base sm:text-lg font-semibold">RM. Ibu Djoe dan Tante Hoa</p>
+        <div>
+          <p class="font-bold text-white text-lg">Lokasi:</p>
+          <p class="font-light text-lg text-white">RM. Ibu Djoe dan Tante Hoa</p>
         </div>
 
-        <div class="relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-md">
+        <div
+          class="relative pt-[56.25%] w-full overflow-hidden rounded-xl shadow-lg ring-1 ring-black/10"
+        >
           <iframe
             class="absolute top-0 left-0 w-full h-full rounded-xl"
             frameborder="0"
@@ -142,9 +155,10 @@
       </div>
     </section>
 
+    <!-- Ucapan -->
     <section
       id="ucapan"
-      class="relative bg-[url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg')] bg-cover bg-center py-16 px-4 min-h-screen min-h-[100svh]"
+      class="relative bg-[url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg')] bg-cover bg-center py-16 px-4 min-h-screen"
     >
       <div class="absolute inset-0 bg-white/80 backdrop-blur-sm z-0"></div>
 
