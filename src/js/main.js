@@ -119,10 +119,6 @@ document.getElementById('formUcapan').addEventListener('submit', async (e) => {
   const formData = new FormData(form);
 
   try {
-    // await fetch(scriptURL, {
-    //   method: 'POST',
-    //   body: formData,
-    // });
     await fetch(scriptURL, {
       redirect: 'follow',
       method: 'POST',

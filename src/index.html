@@ -7,8 +7,16 @@
     <title>Wedding of Zahro & Mahdy</title>
     <link rel="stylesheet" href="css/tailwind.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"
+      defer
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
     <script type="module" src="js/main.js" defer></script>
   </head>
   <body class="font-noto overflow-hidden bg-black">
@@ -43,7 +51,7 @@
           <h2 id="guest-name" class="text-2xl sm:text-4xl font-semibold mt-4">Tamu Undangan</h2>
         </div>
         <a
-          href="#mempelai"
+          href="#"
           id="open-invit"
           class="mt-2 inline-flex items-center gap-2 px-4 py-2 border border-white text-white rounded-full text-sm transition hover:bg-white hover:text-black active:bg-white active:text-black"
         >
@@ -86,7 +94,7 @@
           <div class="items-center">
             <p class="font-bold text-center text-lg sm:text-xl pt-4 pb-2">Laelatuz Zahro</p>
             <p class="font-light text-center text-sm sm:text-lg">
-              Putri dari Bapak Abdul Jamil (Alm.)<br />& Ibu Sugiharti
+              Putri dari Bapak Abdul Jamil (Alm.)<br />& Ibu Sugiarti
             </p>
           </div>
         </div>
@@ -113,7 +121,7 @@
     <!-- Info Acara -->
     <section
       id="info-acara"
-      class="relative bg-cover bg-center text-black min-h-screen flex flex-col justify-center px-6 py-5 sm:py-5"
+      class="relative bg-cover bg-center text-black min-h-screen flex flex-col justify-center px-8 py-5 sm:py-5"
       style="background-image: url('css/landing-page.jpg')"
     >
       <div class="absolute inset-0 bg-black/70 z-0"></div>
@@ -126,18 +134,21 @@
         class="relative z-10 w-full max-w-2xl border-1 border-white backdrop-blur-md rounded-2xl shadow-2xl p-6 pb-10 sm:p-10 space-y-6 mb-10"
       >
         <div>
-          <p class="font-bold text-white text-lg">Tanggal:</p>
-          <p class="font-light text-lg text-white">Sabtu, 30 Agustus 2025</p>
+          <p class="font-bold text-white text-2sm">Tanggal:</p>
+          <p class="font-light text-2sm text-white">Sabtu, 30 Agustus 2025</p>
         </div>
 
         <div>
-          <p class="font-bold text-white text-lg">Waktu:</p>
-          <p class="font-light text-lg text-white">Pukul 09.00 – 12.00 WIB</p>
+          <p class="font-bold text-white text-2sm">Waktu:</p>
+          <p class="font-light text-2sm text-white">Pukul 09.00 – 12.00 WIB</p>
         </div>
 
         <div>
-          <p class="font-bold text-white text-lg">Lokasi:</p>
-          <p class="font-light text-lg text-white">RM. Ibu Djoe dan Tante Hoa</p>
+          <p class="font-bold text-white text-2sm">Lokasi:</p>
+          <p class="font-light text-2sm text-white">
+            Resto Ibu Djoe dan Tante Hoa,<br />Jl. Kapten Sudibyo No.113C, Kec. Tegal Selatan, Kota
+            Tegal, Jawa Tengah.
+          </p>
         </div>
 
         <div
@@ -158,7 +169,7 @@
     <!-- Ucapan -->
     <section
       id="ucapan"
-      class="relative bg-[url('https://i.pinimg.com/1200x/cb/01/f9/cb01f975c3ae6c6e7c7bab842d33a80d.jpg')] bg-cover bg-center py-16 px-4 min-h-screen"
+      class="relative bg-[url('css/landing-page.jpg')] bg-cover bg-center py-16 px-4 min-h-screen"
     >
       <div class="absolute inset-0 bg-white/80 backdrop-blur-sm z-0"></div>
 
