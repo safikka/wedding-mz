@@ -12,6 +12,7 @@
   "devDependencies": {
     "html-minifier-terser": "^7.2.0",
     "prettier": "^3.6.2",
+    "sharp": "^0.34.3",
     "vite": "^7.0.4",
     "vite-plugin-singlefile": "^2.3.0"
   },
