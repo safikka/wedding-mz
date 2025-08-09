@@ -6,6 +6,16 @@
     <meta name="theme-color" content="#000000" />
     <title>Wedding of Zahro & Mahdy</title>
 
+    <!-- Open Graph untuk Facebook, WhatsApp, dll. -->
+    <meta property="og:title" content="Undangan Pernikahan Mahdy & Pasangan" />
+    <meta
+      property="og:description"
+      content="Kami mengundang Anda untuk hadir di acara pernikahan kami. Klik untuk melihat detail."
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://wedding.mahdysyafiq.com" />
+    <meta property="og:type" content="website" />
+
     <!-- Preconnect & Preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,8 +86,8 @@
       <div
         class="flex flex-col items-center justify-center text-center space-y-4 max-w-5xl mx-auto"
       >
-        <p class="italic font-light text-sm sm:text-xl">---</p>
-        <p class="italic font-light text-sm sm:text-xl px-4 text-justify">
+        <p class="reveal italic font-light text-sm sm:text-xl">---</p>
+        <p class="reveal italic font-light text-sm sm:text-xl px-4 text-justify">
           “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu
           dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia
           menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar
@@ -86,10 +96,12 @@
         <p class="font-semibold text-sm sm:text-2xl">(Q.S. Ar-Rum : 21)</p>
       </div>
 
-      <p class="font-bold text-center text-3xl mt-20 sm:text-2xl mb-5">Mempelai</p>
+      <p class="reveal font-bold text-center text-3xl mt-20 sm:text-2xl mb-5">Mempelai</p>
 
-      <div class="flex flex-col md:flex-row justify-around items-center gap-6 mt-8 px-4 mb-20">
-        <div>
+      <div
+        class="reveal flex flex-col md:flex-row justify-around items-center gap-6 mt-8 px-4 mb-20"
+      >
+        <div class="reveal">
           <div class="w-[250px] h-[300px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-xl">
             <img
               src="css/wedok.webp"
@@ -106,7 +118,7 @@
           </p>
         </div>
 
-        <div>
+        <div class="reveal">
           <div class="w-[250px] h-[300px] sm:w-[350px] sm:h-[450px] overflow-hidden rounded-xl">
             <img
               src="css/lanang.webp"
@@ -133,12 +145,12 @@
     >
       <div class="absolute inset-0 bg-black/70 z-0"></div>
 
-      <h1 class="relative text-left text-4xl font-bold text-white mt-10 mb-8">
-        Akad &<br />Resepsi
+      <h1 class="reveal relative text-center text-3xl font-bold text-white mt-10 mb-8">
+        Akad & Resepsi
       </h1>
 
       <div
-        class="relative z-10 w-full max-w-2xl border-1 border-white backdrop-blur-md rounded-2xl shadow-2xl p-6 pb-10 sm:p-10 space-y-6 mb-10"
+        class="reveal relative z-10 w-full max-w-2xl border-1 border-white backdrop-blur-md rounded-2xl shadow-2xl p-6 pb-10 sm:p-10 space-y-6 mb-10"
       >
         <div>
           <p class="font-bold text-white text-2sm">Tanggal:</p>
@@ -180,15 +192,15 @@
 
       <div class="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-center">
         <div class="mb-12 text-center">
-          <h2 class="text-3xl font-bold text-white">Ucapan & Doa</h2>
-          <p class="text-white mt-2 max-w-md mx-auto">
+          <h2 class="reveal text-3xl font-bold text-white">Ucapan & Doa</h2>
+          <p class="reveal text-white mt-2 max-w-md mx-auto">
             Silakan tinggalkan ucapan dan doa,<br />serta konfirmasi kehadiran untuk kedua mempelai.
           </p>
         </div>
 
         <div class="w-full flex flex-col md:flex-row gap-8">
-          <div class="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4">
-            <form id="formUcapan" class="space-y-3">
+          <div class="reveal w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4">
+            <form id="formUcapan" class="space-y-3 text-sm sm:text-base">
               <input
                 type="text"
                 name="nama"
@@ -235,7 +247,7 @@
           </div>
 
           <div
-            class="w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4 max-h-[600px] overflow-y-auto"
+            class="reveal w-full md:w-1/2 bg-white rounded-xl shadow-md p-6 space-y-4 max-h-[600px] overflow-y-auto"
           >
             <h3 class="text-xl font-bold text-center text-gray-800">Ucapan & Doa</h3>
             <div class="border-t pt-4 space-y-2" id="ucapanList"></div>

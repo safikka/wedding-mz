@@ -54,11 +54,14 @@ async function fetchUcapan() {
           .filter((item) => item.nama && item.nama.trim() !== '') // filter nama kosong
           .map(
             (item) => `
-        <div class="bg-gray-80 p-4 border-gray-300 border-b-1">
+        <div class="bg-gray-80 p-4 border-gray-300 border-b-1 text-sm">
           <div class="flex items-center justify-between">
-            <div class="font-semibold text-blue-700">${item.nama}</div>
+            <div class="flex flex-column">
+              <p class="pr-1">Dari:</p>
+              <p class="font-semibold text-blue-700">${item.nama}</p>
+            </div>
           </div>
-          <p class="mt-1 text-sm text-gray-700">${item.ucapan}</p>
+          <p class="mt-1 text-sm text-gray-600">${item.ucapan}</p>
         </div>
       `
           )
@@ -114,3 +117,39 @@ new IntersectionObserver((entries, obs) => {
     obs.disconnect();
   }
 }).observe(document.getElementById('mapFrame'));
+
+// Ambil semua elemen yang mau di-reveal
+const revealItems = document.querySelectorAll('.reveal');
+
+// Set posisi awal semua elemen
+gsap.set(revealItems, { opacity: 0, y: 50 });
+
+let revealedCount = 0; // counter elemen yang sudah di-animate
+
+// Observer untuk trigger animasi
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        gsap.to(entry.target, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            revealedCount++;
+            if (revealedCount === revealItems.length) {
+              // Semua sudah di-reveal → disconnect observer
+              revealObserver.disconnect();
+            }
+          },
+        });
+        revealObserver.unobserve(entry.target); // stop observe elemen ini
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+// Observe semua elemen reveal
+revealItems.forEach((el) => revealObserver.observe(el));
